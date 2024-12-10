@@ -1,4 +1,5 @@
 /* Fuente y estilos básicos */
+/* Fuente y estilos básicos */
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -41,7 +42,7 @@ footer {
 /* Responsividad para Productos */
 @media (max-width: 768px) {
     #productos .card {
-        width: 100%; /* Ocupa el 100% del ancho del contenedor */
+        width: 100%;
     }
 }
 
@@ -117,55 +118,81 @@ footer {
     font-size: 65px;
     font-style: normal;
 }
-body {
-    font-family: Arial, sans-serif;
+
+.col.item.social{
+    margin-top: 20px;
 }
 
-.contact-form {
-    max-width: 500px;
-    margin: 25px auto;
+/* Estilos para el ícono del carrito */
+#cart-icon {
+    position: relative;
+    font-size: 1.5em;
+    color: white;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8em;
+}
+
+/* Estilo del Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
     padding: 20px;
-    background-color: #f7f7f7;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
     font-weight: bold;
-    color: #555;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
-
-.contact-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
+#cart-actions button {
+    margin: 5px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.contact-form button:hover {
-    background-color: #218838;
+#cart-actions .btn-danger {
+    background-color: red;
+    color: white;
 }
+
+#cart-actions .btn-success {
+    background-color: green;
+    color: white;
+}
+
