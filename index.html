@@ -7,34 +7,32 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-     <!-- para footer -->
+    <!-- para footer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-     <!-- efecto -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- efecto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- font google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <h1><a class="navbar-brand" href="#">Ferreteria <spam class="animate__backInRight">   Mac-Todo</spam></a></h1>
+            <h1><a class="navbar-brand" href="#">Ferreteria <span class="animate__backInRight">   Mac-Todo</span></a></h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link animate__backInDown" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link animate__backInDown" href="#productos">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link animate__backInDown" href="./formulario.html">Contacto</a></li>
+                    <li class="nav-item mar"><a class="nav-link animate__backInDown" href="#inicio">Inicio</a></li>
+                    <li class="nav-item mar"><a class="nav-link animate__backInDown" href="#productos">Productos</a></li>
+                    <li class="nav-item mar "><a class="nav-link animate__backInDown" href="./formulario.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link animate__backInDown" href="#" id="cart-icon">🛒<span id="cart-count">0</span></a></li>
                 </ul>
             </div>
         </nav>
@@ -51,93 +49,56 @@
                     <div class="card-body">
                         <h5 class="card-title">Producto 1</h5>
                         <p class="card-text">$100</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <a href="#" class="btn btn-primary add-to-cart" data-name="Producto 1" data-price="100">Agregar al carrito</a>
                     </div>
                 </div>
             </div>
             <!-- Más tarjetas de productos -->
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="./imagenes/162113-1600-auto.webp" class="card-img-top" alt="Producto 1">
+                    <img src="./imagenes/162113-1600-auto.webp" class="card-img-top" alt="Producto 2">
                     <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">$100</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <h5 class="card-title">Producto 2</h5>
+                        <p class="card-text">$150</p>
+                        <a href="#" class="btn btn-primary add-to-cart" data-name="Producto 2" data-price="150">Agregar al carrito</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="./imagenes/162696-1600-auto.webp" class="card-img-top" alt="Producto 1">
+                    <img src="./imagenes/162696-1600-auto.webp" class="card-img-top" alt="Producto 3">
                     <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">$100</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <h5 class="card-title">Producto 3</h5>
+                        <p class="card-text">$200</p>
+                        <a href="#" class="btn btn-primary add-to-cart" data-name="Producto 3" data-price="200">Agregar al carrito</a>
                     </div>
                 </div>
             </div>
-             <!-- slide --> 
-             
-              <!-- slide -->
-               <!-- Card de producto 1 -->
-               <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="./imagenes/D_NQ_NP_2X_633420-MLA45467093493_042021-F.webp" class="card-img-top" alt="Producto 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">$100</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Más tarjetas de productos -->
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="./imagenes/D_NQ_NP_667175-MLU78631654530_092024-O.webp" class="card-img-top" alt="Producto 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">$100</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="./imagenes/D_NQ_NP_923962-MLA44666427411_012021-O.webp" class="card-img-top" alt="Producto 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">$100</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </section>
-
-    <!-- Reseñas -->
-    <section id="reseñas" class="container mt-5">
-        <h2 class="text-center bebas-neue-regular">Reseñas de Clientes</h2>
-        <div class="grid-container">
-            <div class="grid-item"><b>José Manuel:</b> “Muy buena experiencia. Trato formidable. El pedido llegó súper rápido y el producto de excelente calidad. Muchas gracias y a seguir así.”</div>
-            <div class="grid-item"><b>Cristian Benítez:</b> “RAPIDEZ Y SENCILLO. Todo perfecto.”</div>
-            <div class="grid-item"> <b>Carlos N: </b>"Buen precio y entrega muy ágil. Todo perfecto."</div>
+	<!-- Modal para Ticket -->
+    <div id="ticket-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="ticket-details"></div>
+            <div id="cart-actions">
+                <button id="purchase-button" class="btn btn-success">Comprar</button>
+            </div>
         </div>
-    </section>
-
+    </div>
+    
     <!-- Footer -->
     <div class="footer-dark">
         <footer>
             <div class="container">
                 <div class="row">
-                 
                     <div class="col-md-12 item text">
                         <h3>Mac-Todo</h3>
                         <p>Nos dedicamos a vender artículos de ferretería y productos de ocasión en línea, ofreciendo productos de alta calidad a precios competitivos y garantizando la satisfacción de nuestros clientes.</p>
                     </div>
                     <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">Mac-Todo © 2024</p>
+                <p class="copyright">Mac-Todo &copy; 2024</p>
             </div>
         </footer>
     </div>
@@ -145,8 +106,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Mfooter -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
