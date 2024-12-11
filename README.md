@@ -53,10 +53,11 @@ Las fuentes "Roboto" y "Bebas Neue" fueron integradas para mejorar la estética 
 ## Estructura del Proyecto
 - **index.html**: Página principal con productos y reseñas.
 - **formulario.html**: Página de contacto.
-- **styles.css**: Estilos personalizados.
+- **styles.css**: Estilos personalizados para index-html.
 - **cart.js**: Funcionalidad del carrito de compras.
 - **validation.js**: Validación del formulario.
-
+- **styles2.css**: Estilos personalizados para formulario.html.
+  
 ## Conclusión
 Ferretería Mac-Todo combina tecnologías modernas y accesibles para ofrecer un e-commerce eficiente y amigable. Su diseño y funcionalidades están orientados a satisfacer las necesidades de los usuarios, brindando una experiencia de compra en línea práctica y segura.
 
