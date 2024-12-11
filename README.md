@@ -4,7 +4,7 @@ https://dragonesmagicos.github.io/mac-todo/   <--- se rompe al reducir la pagina
 https://mac-todo.netlify.app         <---  funciona perfectamente 
 
 
-# Mac-todo
+# Mac-Todo
 Pagina prueba ecommerce
 
 # Ferretería Mac-Todo
