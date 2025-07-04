@@ -1,5 +1,4 @@
-/* Fuente y estilos bÃ¡sicos */
-/* Fuente y estilos bÃ¡sicos */
+/* Fuente y estilos básicos */
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -16,19 +15,37 @@ footer {
 
 /* Estilos para productos */
 #productos .card {
-    margin: 10px;
+    margin-bottom: 20px; /* Espacio entre filas de tarjetas */
     transition: transform 0.3s;
+    height: 100%; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
 }
 
 #productos .card:hover {
     transform: scale(1.05);
 }
 
-/* Estilos para ReseÃ±as con Grid */
+.img-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+/* Estilos para Reseñas con Grid */
 .grid-container {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin-top: 20px;
 }
 
@@ -39,14 +56,7 @@ footer {
     text-align: center;
 }
 
-/* Responsividad para Productos */
-@media (max-width: 768px) {
-    #productos .card {
-        width: 100%;
-    }
-}
-
-/* Responsividad para Navbar en pantallas pequeÃ±as */
+/* Responsividad para Navbar en pantallas pequeñas */
 @media (max-width: 576px) {
     .navbar-nav {
         text-align: center;
@@ -123,22 +133,31 @@ footer {
     margin-top: 20px;
 }
 
-/* Estilos para el Ã­cono del carrito */
+/* MODIFICADO: Estilos para el ícono del carrito */
 #cart-icon {
     position: relative;
-    font-size: 1.5em;
-    color: white;
+    display: inline-block; /* Para que la posición absoluta del contador funcione bien */
+    padding: 0.5rem;
+}
+
+#cart-icon img {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle; /* Alinea la imagen verticalmente */
 }
 
 #cart-count {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: 0px;
+    right: 0px;
     background-color: red;
     color: white;
     border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.8em;
+    padding: 1px 5px;
+    font-size: 0.75em;
+    border: 1px solid white;
+    /* Pequeño truco para centrar mejor el contador */
+    transform: translate(40%, -40%);
 }
 
 /* Estilo del Modal */
@@ -165,19 +184,20 @@ footer {
     text-align: center;
 }
 
-.close {
+.close, .close-login {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus,
+.close-login:hover, .close-login:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
+
 #cart-actions button {
     margin: 5px;
     padding: 10px 15px;
@@ -186,15 +206,11 @@ footer {
     cursor: pointer;
 }
 
-#cart-actions .btn-danger {
-    background-color: red;
-    color: white;
-}
-
 #cart-actions .btn-success {
     background-color: green;
     color: white;
 }
+
 .cart-table {
     width: 100%;
     border-collapse: collapse;
@@ -223,12 +239,14 @@ footer {
     margin-top: 15px;
     text-align: right;
 }
+
 #reseñas {
     margin-top: 50px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif; /* Asegúrate de usar la misma fuente que el resto del sitio */
-    color: #333; /* Color de texto estándar */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
 }
+
 #reseñas .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -263,4 +281,6 @@ footer {
     font-size: 0.95rem;
     color: #666;
 }
-
+#customer-form .form-group {
+    margin-bottom: 1rem;
+}
