@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = [];
     let currentUser = null;
 
-    // --- 1. L�gica de Productos ---
+    // --- 1. Lógica de Productos ---
     const fetchProducts = async () => {
         try {
             const response = await fetch(`${API_BASE_URL}/productos`);
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderProducts(products);
         } catch (error) {
             console.error('Error al cargar productos:', error);
-            productListContainer.innerHTML = '<p class="col-12 text-center">Error al cargar productos. Asegurate de que el servidor backend está corriendo.</p>';
+            productListContainer.innerHTML = '<p class="col-12 text-center">Error al cargar productos. Asegúrate de que el servidor backend esté corriendo.</p>';
         }
     };
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- 2. L�gica del Carrito ---
+    // --- 2. Lógica del Carrito ---
     const addToCart = (product) => {
         const existingItem = cart.find(item => item.id === product.id);
         if (existingItem) {
@@ -104,16 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
         ticketDetails.innerHTML = content;
     };
 
-    // --- 3. L�gica de Compra y Login/Registro ---
+    // --- 3. Lógica de Compra y Login/Registro ---
     const handlePurchase = async () => {
         if (cart.length === 0) {
-            alert("El carrito esá vacío.");
+            alert("El carrito está vacío.");
             return;
         }
 
         if (!currentUser) {
             ticketModal.style.display = 'none';
-            // Resetea el formulario a su estado inicial antes de mostrarlo
             customerForm.reset();
             customerNombreInput.readOnly = false;
             customerApellidoInput.readOnly = false;
@@ -121,6 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
             loginModal.style.display = 'block';
             return;
         }
+
+        // --- NUEVO: Bloque de validación antes de enviar ---
+        if (!currentUser.id) {
+            alert("Error: No se pudo identificar al cliente. Por favor, inténtalo de nuevo.");
+            console.error("Error crítico: currentUser no tiene ID.", currentUser);
+            return;
+        }
+
+        for (const item of cart) {
+            if (!item.id) {
+                alert(`Error: El producto "${item.nombre}" no tiene un ID válido y no se puede procesar.`);
+                console.error("Error crítico: item del carrito sin ID.", item);
+                return;
+            }
+        }
+        // --- Fin del bloque de validación ---
 
         const pedido = {
             cliente: { id: currentUser.id },
@@ -167,22 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`${API_BASE_URL}/clientes/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email })
-            });
+            const response = await fetch(`${API_BASE_URL}/clientes/email/${email}`);
 
             if (response.ok) {
                 const existingCustomer = await response.json();
-                if (existingCustomer.nombre) {
-                    customerNombreInput.value = existingCustomer.nombre;
-                    customerApellidoInput.value = existingCustomer.apellido;
-                    customerDniInput.value = existingCustomer.dni;
-                    customerNombreInput.readOnly = true;
-                    customerApellidoInput.readOnly = true;
-                    customerDniInput.readOnly = true;
-                }
+                customerNombreInput.value = existingCustomer.nombre;
+                customerApellidoInput.value = existingCustomer.apellido;
+                customerDniInput.value = existingCustomer.dni;
+                customerNombreInput.readOnly = true;
+                customerApellidoInput.readOnly = true;
+                customerDniInput.readOnly = true;
             } else {
                 customerNombreInput.value = '';
                 customerApellidoInput.value = '';
@@ -229,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             handlePurchase();
         } catch (error) {
             console.error('Error en el login/registro:', error);
-            alert('Hubo un problema al identificarte. Int�ntalo de nuevo.');
+            alert('Hubo un problema al identificarte. Inténtalo de nuevo.');
         }
     };
 
